@@ -1,0 +1,67 @@
+@page
+@model DocumentosModel
+@{
+    ViewData["Title"] = "Mis documentos";
+}
+
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+        <div class="tarjeta shadow-sm">
+            <h1 class="titulo-seccion h3">Espacio de documentos</h1>
+            <p class="text-muted mb-4">
+                Bienvenido/a <strong>@Model.NombreCompleto</strong> (usuario: @Model.Usuario). Desde aquí puede cargar
+                sus documentos legales en formato PDF, DOC, DOCX, JPG o PNG. El tamaño máximo por archivo es de 5 MB.
+            </p>
+
+            @if (ViewData["Mensaje"] != null)
+            {
+                <div class="alert alert-info">@ViewData["Mensaje"]</div>
+            }
+
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="Archivo" class="form-label">Seleccione un documento</label>
+                    <input asp-for="Archivo" type="file" class="form-control" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
+                </div>
+                <button type="submit" class="btn btn-dorado">Cargar documento</button>
+            </form>
+        </div>
+
+        <div class="tarjeta shadow-sm mt-4">
+            <h2 class="titulo-seccion h5">Archivos cargados</h2>
+
+            @if (Model.Archivos.Count == 0)
+            {
+                <p class="text-muted mb-0">Todavía no cargó ningún documento en su espacio.</p>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle tabla-documentos mb-0">
+                        <thead>
+                            <tr>
+                                <th>Archivo</th>
+                                <th>Tamaño</th>
+                                <th>Fecha de carga</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var archivo in Model.Archivos)
+                            {
+                                <tr>
+                                    <td>@archivo.Name</td>
+                                    <td>@(archivo.Length < 1024 ? archivo.Length + " bytes" : Math.Round(archivo.Length / 1024.0, 0) + " KB")</td>
+                                    <td>@archivo.LastWriteTime.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>
+                                        <a href="@Url.Content("~/uploads/" + Model.Usuario + "/" + archivo.Name)" target="_blank">Ver</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

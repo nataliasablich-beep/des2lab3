@@ -1,10 +1,74 @@
-﻿@page
+@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="portada">
+    <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-7">
+            <h1>Asesoría Legal Global</h1>
+            <p>
+                Consultoría legal para personas y empresas. Registrese en el sitio para acceder a su
+                espacio personal y gestionar sus documentos legales de forma simple y segura.
+            </p>
+            <a class="btn btn-dorado" asp-page="/Registro">Registrarme</a>
+            <a class="btn btn-contorno ms-2" asp-page="/Login">Iniciar sesión</a>
+        </div>
+        <div class="col-12 col-lg-5 text-center">
+            <img src="~/images/logo-banner.png" alt="Logo de Asesoría Legal Global" class="logo-portada" />
+        </div>
+    </div>
+</section>
+
+<section class="mt-4">
+    <h2 class="titulo-seccion h4">Nuestros servicios</h2>
+    <div class="row g-4 mt-1">
+        <div class="col-12 col-md-4">
+            <div class="servicio">
+                <h3>Asesoramiento legal</h3>
+                <p>Consultas sobre contratos, familia, laboral y temas comerciales con atención personalizada.</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="servicio">
+                <h3>Gestión de documentos</h3>
+                <p>Cada cliente cuenta con su propio espacio para cargar y consultar sus archivos legales.</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="servicio">
+                <h3>Atención segura</h3>
+                <p>Los documentos se guardan en carpetas privadas y solo el titular puede acceder a ellas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-5">
+    <h2 class="titulo-seccion h4">Nuestras marcas</h2>
+    <p class="text-muted">Trabajamos junto a estudios asociados que respaldan cada una de las consultas.</p>
+    <div class="row g-4 mt-1">
+        <div class="col-12 col-md-6">
+            <div class="marca">
+                <img src="~/images/logo-assecoria.png" alt="Logo de Assecoria Legal" class="marca-logo" />
+                <p class="mt-3 mb-0">Assecoria Legal — asesoramiento en contratos y derecho comercial.</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="marca">
+                <img src="~/images/logo-elama.png" alt="Logo de Pissecuria Elama" class="marca-logo" />
+                <p class="mt-3 mb-0">Pissecuria Elama — consultoría en derecho de familia y sucesiones.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-5">
+    <h2 class="titulo-seccion h4">¿Cómo funciona?</h2>
+    <ol class="mt-2">
+        <li>Complete el formulario de registro con sus datos personales.</li>
+        <li>Inicie sesión con su nombre de usuario y contraseña.</li>
+        <li>Cargue sus documentos en su espacio personal de gestión de archivos.</li>
+    </ol>
+</section>

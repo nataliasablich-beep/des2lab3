@@ -8,15 +8,283 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f4f8;
+  color: #253150;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+a {
+  color: #1d3f8a;
+}
+
+a:hover {
+  color: #121a48;
+}
+
+.contenido {
+  flex: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Barra de navegación */
+
+.barra-nav {
+  background-color: #121a48;
+  padding-top: .6rem;
+  padding-bottom: .6rem;
+}
+
+.logo-nav {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  display: block;
+}
+
+.marca-texto {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  margin-left: .65rem;
+}
+
+@media (max-width: 575px) {
+  .marca-texto {
+    font-size: .9rem;
+    margin-left: .4rem;
+  }
+
+  .logo-nav {
+    height: 36px;
+    width: 36px;
+  }
+}
+
+.barra-nav .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  padding: .5rem .9rem;
+}
+
+.barra-nav .nav-link:hover,
+.barra-nav .nav-link:focus {
+  color: #d9b978;
+}
+
+.barra-nav .texto-usuario {
+  color: #d9b978;
+}
+
+.barra-nav .enlace-salir {
+  border: 1px solid #d9b978;
+  border-radius: 20px;
+  padding: .35rem .9rem;
+  margin-left: .4rem;
+}
+
+@media (max-width: 991px) {
+  .barra-nav .navbar-nav {
+    padding-top: .8rem;
+  }
+
+  .barra-nav .enlace-salir {
+    margin-left: 0;
+    margin-top: .5rem;
+    display: inline-block;
+  }
+}
+
+/* Pie de página */
+
+.pie {
+  background-color: #121a48;
+  color: #d3d8e6;
+  padding: 2rem 0 1.2rem 0;
+  margin-top: 2rem;
+}
+
+.pie h6 {
+  color: #d9b978;
+  font-weight: 600;
+  margin-bottom: .6rem;
+}
+
+.pie a {
+  color: #d3d8e6;
+  text-decoration: none;
+}
+
+.pie a:hover {
+  color: #d9b978;
+  text-decoration: underline;
+}
+
+.pie hr {
+  border-color: #3a4266;
+}
+
+.logo-pie {
+  max-width: 230px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Portada */
+
+.portada {
+  background-color: #121a48;
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 2.2rem;
+}
+
+.portada h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: .8rem;
+}
+
+.portada p {
+  color: #ccd3e4;
+  margin-bottom: 1.4rem;
+}
+
+.portada .logo-portada {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  .portada {
+    padding: 1.4rem;
+    text-align: center;
+  }
+
+  .portada h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tarjetas y formularios */
+
+.tarjeta {
+  background-color: #ffffff;
+  border: 1px solid #e1e5ee;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.tarjeta h1,
+.tarjeta h2 {
+  color: #1c2340;
+}
+
+.titulo-seccion {
+  color: #1c2340;
+  font-weight: 700;
+  margin-bottom: .4rem;
+}
+
+.servicio {
+  background-color: #ffffff;
+  border: 1px solid #e1e5ee;
+  border-radius: 12px;
+  padding: 1.4rem;
+  height: 100%;
+}
+
+.servicio h3 {
+  font-size: 1.1rem;
+  color: #1c2340;
+  font-weight: 600;
+}
+
+.servicio p {
+  color: #5c6884;
+  margin-bottom: 0;
+}
+
+.marca {
+  background-color: #ffffff;
+  border: 1px solid #e1e5ee;
+  border-radius: 12px;
+  padding: 1.4rem;
+  text-align: center;
+  height: 100%;
+}
+
+.marca-logo {
+  max-width: 100%;
+  max-height: 120px;
+  border-radius: 8px;
+}
+
+.marca p {
+  color: #5c6884;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #1c2340;
+}
+
+.form-control:focus {
+  border-color: #d9b978;
+  box-shadow: 0 0 0 .2rem rgba(217, 185, 120, .3);
+}
+
+/* Botones */
+
+.btn-dorado {
+  background-color: #d9b978;
+  border: 1px solid #d9b978;
+  color: #1c2340;
+  font-weight: 600;
+  padding: .55rem 1.4rem;
+}
+
+.btn-dorado:hover,
+.btn-dorado:focus {
+  background-color: #c9a55c;
+  border-color: #c9a55c;
+  color: #1c2340;
+}
+
+.btn-contorno {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: .55rem 1.4rem;
+}
+
+.btn-contorno:hover,
+.btn-contorno:focus {
+  background-color: #ffffff;
+  color: #1c2340;
+}
+
+/* Listado de documentos */
+
+.tabla-documentos {
+  background-color: #ffffff;
+}
+
+.tabla-documentos th {
+  background-color: #eef1f7;
+  color: #1c2340;
+}
+
+@media (max-width: 575px) {
+  .tabla-documentos {
+    font-size: .85rem;
+  }
 }
